@@ -307,7 +307,7 @@ export default function Home() {
               <h2 class="contact__headline header-xl">Contact</h2>
               <p class="contact__description">
                 I would love to hear about your project and how I could help.
-                Please fill in the form, and I'll get back to you as soon as
+                Please fill in the form, and I`ll get back to you as soon as
                 possible.
               </p>
             </div>
