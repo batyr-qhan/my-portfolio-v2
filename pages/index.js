@@ -157,12 +157,16 @@ export default function Home() {
                   <span>EXPO</span>
                 </p>
                 <div class="projects__links">
-                  <a href="" class="underline">
+                  <a
+                    href="https://www.loom.com/share/7b88c6a42ae44bc2acf973c10c0d035e"
+                    target="_blank"
+                    class="underline"
+                  >
                     View Project
                   </a>
-                  <a href="" class="underline">
+                  {/* <a href="" class="underline">
                     View Code
-                  </a>
+                  </a> */}
                 </div>
               </div>
 
@@ -180,23 +184,31 @@ export default function Home() {
                     height="253"
                   />
                 </picture>
-                <h3 class="projects__name">Todo Web App</h3>
+                <h3 class="projects__name">My Chat Room</h3>
                 <p class="projects__tags">
-                  <span>HTML</span>
+                  <span>React</span>
                   <span>CSS</span>
-                  <span>JavaScript</span>
+                  <span>Firebase</span>
                 </p>
                 <div class="projects__links">
-                  <a href="" class="underline">
+                  <a
+                    href="https://batyr-qhan.github.io/cool-chat-react-app/"
+                    target="_blank"
+                    class="underline"
+                  >
                     View Project
                   </a>
-                  <a href="" class="underline">
+                  <a
+                    href="https://github.com/batyr-qhan/cool-chat-react-app"
+                    target="_blank"
+                    class="underline"
+                  >
                     View Code
                   </a>
                 </div>
               </div>
 
-              <div class="projects__item">
+              {/* <div class="projects__item">
                 <picture class="projects__picture">
                   <source
                     media="(min-width: 62.5em)"
@@ -224,7 +236,7 @@ export default function Home() {
                     View Code
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               {/* <div class="projects__item">
                 <picture class="projects__picture">
