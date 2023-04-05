@@ -268,6 +268,14 @@ h1 > span {
   margin-block-end: 24px;
 }
 
+.hero__actions-item {
+  margin-bottom: 10px;
+}
+
+.hero__actions-item:last-child {
+  margin: 0;
+}
+
 @media (min-width: 37.5em) {
   .hero {
     position: relative;
@@ -334,6 +342,15 @@ h1 > span {
   .hero__description {
     /* width: 70%; */
     margin-block-end: 34px;
+  }
+
+  .hero__actions-item {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  .hero__actions-item:last-child {
+    margin: 0;
   }
 }
 

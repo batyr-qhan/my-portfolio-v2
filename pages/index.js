@@ -19,9 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main id="main">
-        <section class="hero">
-          <div class="wrapper hero__wrapper bottom-border">
-            <div class="hero__content">
+        <section className="hero">
+          <div className="wrapper hero__wrapper bottom-border">
+            <div className="hero__content">
               <picture>
                 <source
                   media="(min-width: 62.5em)"
@@ -32,7 +32,7 @@ export default function Home() {
                   srcset="image-profile-tablet.webp"
                 />
                 <img
-                  class="hero__image"
+                  className="hero__image"
                   src="image-profile-mobile.webp"
                   alt="picture of Adam Keyes"
                   width-="200"
@@ -44,92 +44,104 @@ export default function Home() {
 
               <PatternCircle className="hero__circle" />
 
-              <div class="hero__text">
-                <h1 class="hero__headline header-xl">
+              <div className="hero__text">
+                <h1 className="hero__headline header-xl">
                   Nice to meet you! I`m <span>Batyr Khan</span>.
                 </h1>
-                <p class="hero__description">
+                <p className="hero__description">
                   I`m a front-end developer and react native developer who
                   enjoys building web and mobile apps that users love.
                 </p>
-                <Link href="#contact" class="hero__contact underline">
-                  Contact me
-                </Link>
+                <div className="hero__actions-item">
+                  <Link href="#contact" className="hero__contact underline">
+                    Contact me
+                  </Link>
+                </div>
+                <div className="hero__actions-item">
+                  <Link
+                    href="cv_batyrkhan_2023_orange.pdf"
+                    className="hero__contact underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    My Resume
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="skills">
-          <div class="wrapper skills__wrapper bottom-border">
-            {/* <h2 class="visually-hidden">Skills</h2> */}
-            <div class="skills__item">
-              <h3 class="skills__title">JavaScript</h3>
-              <p class="skills__description">3 Years Experience</p>
+        <section className="skills">
+          <div className="wrapper skills__wrapper bottom-border">
+            {/* <h2 className="visually-hidden">Skills</h2> */}
+            <div className="skills__item">
+              <h3 className="skills__title">JavaScript</h3>
+              <p className="skills__description">3 Years Experience</p>
             </div>
-            <div class="skills__item">
-              <h3 class="skills__title">CSS</h3>
-              <p class="skills__description">3 Years Experience</p>
+            <div className="skills__item">
+              <h3 className="skills__title">CSS</h3>
+              <p className="skills__description">3 Years Experience</p>
             </div>
-            <div class="skills__item">
-              <h3 class="skills__title">React</h3>
-              <p class="skills__description">3 Years Experience</p>
+            <div className="skills__item">
+              <h3 className="skills__title">React</h3>
+              <p className="skills__description">3 Years Experience</p>
             </div>
-            <div class="skills__item">
-              <h3 class="skills__title">TypeScript</h3>
-              <p class="skills__description">1 Year Experience</p>
+            <div className="skills__item">
+              <h3 className="skills__title">TypeScript</h3>
+              <p className="skills__description">1 Year Experience</p>
             </div>
-            <div class="skills__item">
-              <h3 class="skills__title">React Native</h3>
-              <p class="skills__description">1 Year Experience</p>
+            <div className="skills__item">
+              <h3 className="skills__title">React Native</h3>
+              <p className="skills__description">1 Year Experience</p>
             </div>
-            <div class="skills__item">
-              <h3 class="skills__title">Sass</h3>
-              <p class="skills__description">2 Years Experience</p>
+            <div className="skills__item">
+              <h3 className="skills__title">Sass</h3>
+              <p className="skills__description">2 Years Experience</p>
             </div>
           </div>
           <PatternRings className="skills__rings" />
         </section>
 
-        <section class="projects">
-          <div class="wrapper projects__wrapper">
-            <div class="projects__grid">
-              <h2 class="projects__headline header-xl">Projects</h2>
-              <a href="#contact" class="projects__contact underline">
+        <section className="projects">
+          <div className="wrapper projects__wrapper">
+            <div className="projects__grid">
+              <h2 className="projects__headline header-xl">Projects</h2>
+              <a href="#contact" className="projects__contact underline">
                 Contact me
               </a>
 
-              <div class="projects__item">
-                <picture class="projects__picture">
+              <div className="projects__item">
+                <picture className="projects__picture">
                   <source
                     media="(min-width: 62.5em)"
                     srcset="thumbnail-project-1-large.webp"
                   />
                   <img
-                    class="projects__image"
+                    className="projects__image"
                     src="thumbnail-project-1-small.webp"
                     alt="screenshot of design portfolio website"
                     width-="343"
                     height="253"
                   />
                 </picture>
-                <h3 class="projects__name">My First Portfolio (2022)</h3>
-                <p class="projects__tags">
+                <h3 className="projects__name">My First Portfolio (2022)</h3>
+                <p className="projects__tags">
                   <span>NEXT.JS</span>
                   <span>SCSS</span>
                   <span>FRAMER MOTION</span>
                 </p>
-                <div class="projects__links">
+                <div className="projects__links">
                   <a
                     href="https://batyr-qhan-portfolio.vercel.app/"
-                    class="underline"
+                    className="underline"
                     target="_blank"
                   >
                     View Project
                   </a>
                   <a
                     href="https://github.com/batyr-qhan/my-portfolio"
-                    class="underline"
+                    className="underline"
                     target="_blank"
                   >
                     View Code
@@ -137,162 +149,162 @@ export default function Home() {
                 </div>
               </div>
 
-              <div class="projects__item">
-                <picture class="projects__picture">
+              <div className="projects__item">
+                <picture className="projects__picture">
                   <source
                     media="(min-width: 62.5em)"
                     srcset="thumbnail-project-2-large.webp"
                   />
                   <img
-                    class="projects__image"
+                    className="projects__image"
                     src="thumbnail-project-2-small.webp"
                     alt="screenshot of learning platform website with different courses"
                     width-="343"
                     height="253"
                   />
                 </picture>
-                <h3 class="projects__name">React Native Expo Mobile App</h3>
-                <p class="projects__tags">
+                <h3 className="projects__name">React Native Expo Mobile App</h3>
+                <p className="projects__tags">
                   <span>REACT NATIVE</span>
                   <span>EXPO</span>
                 </p>
-                <div class="projects__links">
+                <div className="projects__links">
                   <a
                     href="https://www.loom.com/share/7b88c6a42ae44bc2acf973c10c0d035e"
                     target="_blank"
-                    class="underline"
+                    className="underline"
                   >
                     View Project
                   </a>
-                  {/* <a href="" class="underline">
+                  {/* <a href="" className="underline">
                     View Code
                   </a> */}
                 </div>
               </div>
 
-              <div class="projects__item">
-                <picture class="projects__picture">
+              <div className="projects__item">
+                <picture className="projects__picture">
                   <source
                     media="(min-width: 62.5em)"
                     srcset="thumbnail-project-3-large.webp"
                   />
                   <img
-                    class="projects__image"
+                    className="projects__image"
                     src="thumbnail-project-3-small.webp"
                     alt="screenshot of To Do App showing a list of active and complete tasks"
                     width-="343"
                     height="253"
                   />
                 </picture>
-                <h3 class="projects__name">My Chat Room</h3>
-                <p class="projects__tags">
+                <h3 className="projects__name">My Chat Room</h3>
+                <p className="projects__tags">
                   <span>React</span>
                   <span>CSS</span>
                   <span>Firebase</span>
                 </p>
-                <div class="projects__links">
+                <div className="projects__links">
                   <a
                     href="https://batyr-qhan.github.io/cool-chat-react-app/"
                     target="_blank"
-                    class="underline"
+                    className="underline"
                   >
                     View Project
                   </a>
                   <a
                     href="https://github.com/batyr-qhan/cool-chat-react-app"
                     target="_blank"
-                    class="underline"
+                    className="underline"
                   >
                     View Code
                   </a>
                 </div>
               </div>
 
-              {/* <div class="projects__item">
-                <picture class="projects__picture">
+              {/* <div className="projects__item">
+                <picture className="projects__picture">
                   <source
                     media="(min-width: 62.5em)"
                     srcset="thumbnail-project-4-large.webp"
                   />
                   <img
-                    class="projects__image"
+                    className="projects__image"
                     src="thumbnail-project-4-small.webp"
                     alt="screenshot of video player app with grid of thumbnails of movies and TV shows"
                     width-="343"
                     height="253"
                   />
                 </picture>
-                <h3 class="projects__name">Entertainment Web App</h3>
-                <p class="projects__tags">
+                <h3 className="projects__name">Entertainment Web App</h3>
+                <p className="projects__tags">
                   <span>HTML</span>
                   <span>CSS</span>
                   <span>JavaScript</span>
                 </p>
-                <div class="projects__links">
-                  <a href="" class="underline">
+                <div className="projects__links">
+                  <a href="" className="underline">
                     View Project
                   </a>
-                  <a href="" class="underline">
+                  <a href="" className="underline">
                     View Code
                   </a>
                 </div>
               </div> */}
 
-              {/* <div class="projects__item">
-                <picture class="projects__picture">
+              {/* <div className="projects__item">
+                <picture className="projects__picture">
                   <source
                     media="(min-width: 62.5em)"
                     srcset="thumbnail-project-5-large.webp"
                   />
                   <img
-                    class="projects__image"
+                    className="projects__image"
                     src="thumbnail-project-5-small.webp"
                     alt="screenshot of 4-player memory game with circular tiles that have symbols"
                     width-="343"
                     height="253"
                   />
                 </picture>
-                <h3 class="projects__name">Memory Game</h3>
-                <p class="projects__tags">
+                <h3 className="projects__name">Memory Game</h3>
+                <p className="projects__tags">
                   <span>HTML</span>
                   <span>CSS</span>
                   <span>JavaScript</span>
                 </p>
-                <div class="projects__links">
-                  <a href="" class="underline">
+                <div className="projects__links">
+                  <a href="" className="underline">
                     View Project
                   </a>
-                  <a href="" class="underline">
+                  <a href="" className="underline">
                     View Code
                   </a>
                 </div>
               </div> */}
 
-              {/* <div class="projects__item">
-                <picture class="projects__picture">
+              {/* <div className="projects__item">
+                <picture className="projects__picture">
                   <source
                     media="(min-width: 62.5em)"
                     srcset="thumbnail-project-6-large.webp"
                   />
                   <img
-                    class="projects__image"
+                    className="projects__image"
                     src="thumbnail-project-6-small.webp"
                     alt="grid of thumbnails of famous works of art"
                     width-="343"
                     height="253"
                   />
                 </picture>
-                <h3 class="projects__name">Art Gallery Showcase</h3>
-                <p class="projects__tags">
+                <h3 className="projects__name">Art Gallery Showcase</h3>
+                <p className="projects__tags">
                   <span>HTML</span>
                   <span>CSS</span>
                   <span>JavaScript</span>
                 </p>
-                <div class="projects__links">
-                  <a href="" class="underline">
+                <div className="projects__links">
+                  <a href="" className="underline">
                     View Project
                   </a>
-                  <a href="" class="underline">
+                  <a href="" className="underline">
                     View Code
                   </a>
                 </div>
@@ -301,19 +313,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" class="contact bg-less-dark">
-          <div class="wrapper contact__wrapper bottom-border">
-            <div class="contact__text">
-              <h2 class="contact__headline header-xl">Contact</h2>
-              <p class="contact__description">
+        <section id="contact" className="contact bg-less-dark">
+          <div className="wrapper contact__wrapper bottom-border">
+            <div className="contact__text">
+              <h2 className="contact__headline header-xl">Contact</h2>
+              <p className="contact__description">
                 I would love to hear about your project and how I could help.
                 Please fill in the form, and I`ll get back to you as soon as
                 possible.
               </p>
             </div>
-            <form action="" class="contact__form">
-              <div class="contact__control">
-                <label for="name" class="visually-hidden">
+            <form action="" className="contact__form">
+              <div className="contact__control">
+                <label for="name" className="visually-hidden">
                   Name
                 </label>
                 <input
@@ -325,8 +337,8 @@ export default function Home() {
                 />
                 <IconInvalid className="contact__invalid-icon" />
               </div>
-              <div class="contact__control">
-                <label for="email" class="visually-hidden">
+              <div className="contact__control">
+                <label for="email" className="visually-hidden">
                   Email
                 </label>
                 <input
@@ -339,8 +351,8 @@ export default function Home() {
 
                 <IconInvalid className="contact__invalid-icon" />
               </div>
-              <div class="contact__control">
-                <label for="message" class="visually-hidden">
+              <div className="contact__control">
+                <label for="message" className="visually-hidden">
                   Message
                 </label>
                 <textarea
@@ -353,7 +365,7 @@ export default function Home() {
                 ></textarea>
                 <IconInvalid className="contact__invalid-icon" />
               </div>
-              <div class="contact__control align-right">
+              <div className="contact__control align-right">
                 <button type="submit">Send Message</button>
               </div>
             </form>
