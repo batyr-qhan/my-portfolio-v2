@@ -144,6 +144,20 @@ svg {
   overflow: hidden;
 }
 
+/* TOAST */
+
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  padding: .5rem 1rem;
+}
+
+.success {
+  background-color: green;
+}
+
 /* HEADER */
 
 .header {

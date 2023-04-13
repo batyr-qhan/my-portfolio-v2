@@ -6,10 +6,100 @@ import Link from "next/link";
 import PatternRings from "@/public/PatternRings";
 import PatternCircle from "@/public/PatternCircle";
 import IconInvalid from "@/public/IconInvalid";
+import { useState } from "react";
+import { sendContactForm } from "@/lib/api";
+import Toast from "@/components/Toast";
 
 // const inter = Inter({ subsets: ["latin"] });
 
+const initValues = {
+  name: "",
+  email: "",
+  message: "",
+  subject: "From My Website",
+};
+
+const initState = { isLoading: false, error: "", values: initValues };
+
 export default function Home() {
+  const [formState, setFormState] = useState(initState);
+  const [isToastShown, setIsToastShown] = useState({
+    status: false,
+    type: "",
+    text: "",
+  });
+
+  const {
+    values: { name, email, message },
+  } = formState;
+
+  const handleChange = ({ target }) =>
+    setFormState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: target.value,
+      },
+    }));
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    setFormState((prev) => ({
+      ...prev,
+      isLoading: false,
+      error: "this is errror",
+    }));
+    showToast({ type: "warning", text: formState.error });
+
+    // setFormState((prev) => ({
+    //   ...prev,
+    //   isLoading: true,
+    // }));
+    // try {
+    //   await sendContactForm({
+    //     ...formState.values,
+    //     subject: "From My Website",
+    //   });
+    //   setFormState(initState);
+    //   showToast({ type: "success", text: "Successfully Sent" });
+    //   // showToast();
+    //   // toast({
+    //   //   title: "Message sent.",
+    //   //   status: "success",
+    //   //   duration: 2000,
+    //   //   position: "top",
+    //   // });
+    // } catch (error) {
+    //   setFormState((prev) => ({
+    //     ...prev,
+    //     isLoading: false,
+    //     error: error.message,
+    //   }));
+    //   showToast({ type: "warning", text: formState.error });
+    // }
+  };
+
+  const showToast = ({ type, text }) => {
+    setIsToastShown((prev) => ({
+      ...prev,
+      status: true,
+      type,
+      text,
+    }));
+
+    // automatically hide the toast after 5 seconds
+    // your can set a shorter/longer time if you want
+    setTimeout(() => {
+      setIsToastShown((prev) => ({
+        ...prev,
+        status: false,
+        text: "",
+        type: "",
+      }));
+    }, 3000);
+  };
+
   return (
     <>
       <Head>
@@ -19,6 +109,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main id="main">
+        {isToastShown.status && (
+          <Toast type={isToastShown.type} text={isToastShown.text} />
+        )}
         <section className="hero">
           <div className="wrapper hero__wrapper bottom-border">
             <div className="hero__content">
@@ -323,9 +416,9 @@ export default function Home() {
                 possible.
               </p>
             </div>
-            <form action="" className="contact__form">
+            <form onSubmit={onSubmit} className="contact__form">
               <div className="contact__control">
-                <label for="name" className="visually-hidden">
+                <label htmlFor="name" className="visually-hidden">
                   Name
                 </label>
                 <input
@@ -334,11 +427,13 @@ export default function Home() {
                   name="name"
                   placeholder="Name"
                   required
+                  value={name}
+                  onChange={handleChange}
                 />
                 <IconInvalid className="contact__invalid-icon" />
               </div>
               <div className="contact__control">
-                <label for="email" className="visually-hidden">
+                <label htmlFor="email" className="visually-hidden">
                   Email
                 </label>
                 <input
@@ -347,12 +442,14 @@ export default function Home() {
                   name="email"
                   placeholder="Email"
                   required
+                  onChange={handleChange}
+                  value={email}
                 />
 
                 <IconInvalid className="contact__invalid-icon" />
               </div>
               <div className="contact__control">
-                <label for="message" className="visually-hidden">
+                <label htmlFor="message" className="visually-hidden">
                   Message
                 </label>
                 <textarea
@@ -362,6 +459,8 @@ export default function Home() {
                   rows="3"
                   placeholder="Message"
                   required
+                  onChange={handleChange}
+                  value={message}
                 ></textarea>
                 <IconInvalid className="contact__invalid-icon" />
               </div>

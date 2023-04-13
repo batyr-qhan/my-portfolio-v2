@@ -4,14 +4,14 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer class="footer bg-less-dark">
-      {/* <h2 class="visually-hidden">Footer</h2> */}
-      <div class="wrapper">
-        <nav class="header__nav padding-zero">
-          {/* <h2 class="visually-hidden">Navigation</h2> */}
+    <footer className="footer bg-less-dark">
+      {/* <h2 className="visually-hidden">Footer</h2> */}
+      <div className="wrapper">
+        <nav className="header__nav padding-zero">
+          {/* <h2 className="visually-hidden">Navigation</h2> */}
           <Link href="/" className="header__home">
             batyrkhan
-            {/* <span class="visually-hidden">(to home page)</span> */}
+            {/* <span className="visually-hidden">(to home page)</span> */}
           </Link>
 
           <Link
