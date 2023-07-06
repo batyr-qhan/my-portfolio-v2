@@ -151,11 +151,15 @@ svg {
   top: 1rem;
   right: 1rem;
   z-index: 10;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .success {
-  background-color: green;
+  background-color: var(--accent);
+}
+
+.warning {
+  background-color: var(--invalid);
 }
 
 /* HEADER */

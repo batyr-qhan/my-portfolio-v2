@@ -47,37 +47,30 @@ export default function Home() {
 
     setFormState((prev) => ({
       ...prev,
-      isLoading: false,
-      error: "this is errror",
+      isLoading: true,
     }));
-    showToast({ type: "warning", text: formState.error });
-
-    // setFormState((prev) => ({
-    //   ...prev,
-    //   isLoading: true,
-    // }));
-    // try {
-    //   await sendContactForm({
-    //     ...formState.values,
-    //     subject: "From My Website",
-    //   });
-    //   setFormState(initState);
-    //   showToast({ type: "success", text: "Successfully Sent" });
-    //   // showToast();
-    //   // toast({
-    //   //   title: "Message sent.",
-    //   //   status: "success",
-    //   //   duration: 2000,
-    //   //   position: "top",
-    //   // });
-    // } catch (error) {
-    //   setFormState((prev) => ({
-    //     ...prev,
-    //     isLoading: false,
-    //     error: error.message,
-    //   }));
-    //   showToast({ type: "warning", text: formState.error });
-    // }
+    try {
+      await sendContactForm({
+        ...formState.values,
+        subject: "From My Website",
+      });
+      setFormState(initState);
+      showToast({ type: "success", text: "Successfully Sent" });
+      // showToast();
+      // toast({
+      //   title: "Message sent.",
+      //   status: "success",
+      //   duration: 2000,
+      //   position: "top",
+      // });
+    } catch (error) {
+      setFormState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: error.message,
+      }));
+      showToast({ type: "warning", text: formState.error });
+    }
   };
 
   const showToast = ({ type, text }) => {
@@ -411,9 +404,9 @@ export default function Home() {
             <div className="contact__text">
               <h2 className="contact__headline header-xl">Contact</h2>
               <p className="contact__description">
-                I would love to hear about your project and how I could help.
-                Please fill in the form, and I`ll get back to you as soon as
-                possible.
+                I can`t guarantee I'm fully available for you project now. But
+                feel free to drop me en email through this form, so we can
+                discuss.
               </p>
             </div>
             <form onSubmit={onSubmit} className="contact__form">
