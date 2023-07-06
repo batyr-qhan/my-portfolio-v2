@@ -152,7 +152,7 @@ export default function Home() {
                 </div>
                 <div className="hero__actions-item">
                   <Link
-                    href="cv_batyrkhan_2023_orange.pdf"
+                    href="plain_cv.pdf"
                     className="hero__contact underline"
                     target="_blank"
                     rel="noopener noreferrer"
