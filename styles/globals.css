@@ -710,6 +710,7 @@ h1 > span {
 .contact__control button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .contact__invalid-icon {
