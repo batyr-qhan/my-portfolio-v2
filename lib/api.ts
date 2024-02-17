@@ -1,4 +1,4 @@
-export const sendContactForm = (data) =>
+export const sendContactForm = (data: any) =>
   fetch("/api/contact", {
     method: "POST",
     body: JSON.stringify(data),

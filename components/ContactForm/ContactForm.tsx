@@ -1,7 +1,7 @@
 import { sendContactForm } from "@/lib/api";
 import IconInvalid from "@/public/IconInvalid";
 import PatternRings from "@/public/PatternRings";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 const initValues = {
   name: "",
@@ -12,23 +12,35 @@ const initValues = {
 
 const initState = { isLoading: false, error: "", values: initValues };
 
-export default function ContactFormSection({ setIsToastShown }) {
+export default function ContactForm({
+  setIsToastShown,
+}: {
+  setIsToastShown: React.Dispatch<
+    React.SetStateAction<{
+      status: boolean;
+      type: string;
+      text: string;
+    }>
+  >;
+}) {
   const [formState, setFormState] = useState(initState);
 
   const {
     values: { name, email, message },
   } = formState;
 
-  const handleChange = ({ target }) =>
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) =>
     setFormState((prev) => ({
       ...prev,
       values: {
         ...prev.values,
-        [target.name]: target.value,
+        [e.target.name]: e.target.value,
       },
     }));
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setFormState((prev) => ({
@@ -49,7 +61,7 @@ export default function ContactFormSection({ setIsToastShown }) {
       //   duration: 2000,
       //   position: "top",
       // });
-    } catch (error) {
+    } catch (error: any) {
       setFormState((prev) => ({
         ...prev,
         isLoading: false,
@@ -59,7 +71,7 @@ export default function ContactFormSection({ setIsToastShown }) {
     }
   };
 
-  const showToast = ({ type, text }) => {
+  const showToast = ({ type, text }: { type: string; text: string }) => {
     setIsToastShown((prev) => ({
       ...prev,
       status: true,
@@ -85,8 +97,8 @@ export default function ContactFormSection({ setIsToastShown }) {
         <div className="contact__text">
           <h2 className="contact__headline header-xl">Contact</h2>
           <p className="contact__description">
-            I can`t guarantee I`m fully available for your project now. Anyway, feel
-            free to drop me en email through this form, so we can discuss.
+            I can`t guarantee I`m fully available for your project now. Anyway,
+            feel free to drop me en email through this form, so we can discuss.
           </p>
         </div>
         <form onSubmit={onSubmit} className="contact__form">
@@ -128,8 +140,8 @@ export default function ContactFormSection({ setIsToastShown }) {
             <textarea
               name="message"
               id="message"
-              cols="30"
-              rows="3"
+              cols={30}
+              rows={3}
               placeholder="Message"
               required
               onChange={handleChange}

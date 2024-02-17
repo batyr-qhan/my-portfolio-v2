@@ -11,11 +11,11 @@ export default function HeroSection() {
           <picture>
             <source
               media="(min-width: 62.5em)"
-              srcset="image-profile-desktop.webp"
+              srcSet="image-profile-desktop.webp"
             />
             <source
               media="(min-width: 37.5em)"
-              srcset="image-profile-tablet.webp"
+              srcSet="image-profile-tablet.webp"
             />
             <img
               className="hero__image"
