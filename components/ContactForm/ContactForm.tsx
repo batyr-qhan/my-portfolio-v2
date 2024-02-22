@@ -97,8 +97,7 @@ export default function ContactForm({
         <div className="contact__text">
           <h2 className="contact__headline header-xl">Contact</h2>
           <p className="contact__description">
-            I can`t guarantee I`m fully available for your project now. Anyway,
-            feel free to drop me en email through this form, so we can discuss.
+            Feel free to drop me en email through this form!
           </p>
         </div>
         <form onSubmit={onSubmit} className="contact__form">

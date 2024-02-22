@@ -45,7 +45,7 @@ export default function HeroSection() {
             </div>
             <div className="hero__actions-item">
               <Link
-                href="plain_cv.pdf"
+                href="#"
                 className="hero__contact underline"
                 target="_blank"
                 rel="noopener noreferrer"
