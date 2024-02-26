@@ -591,7 +591,7 @@ h1 > span {
   }
 }
 
-@media (min-width: 62.5em) {
+@media (min-width: 62.5em) {  
   .projects__grid {
     gap: 70px 30px;
   }
@@ -600,6 +600,7 @@ h1 > span {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
+    width: 100%;
   }
 
   .projects__picture {
@@ -613,7 +614,7 @@ h1 > span {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    inset: 0; 
     background-color: hsl(0, 0%, 0%);
     opacity: 0;
     transition: opacity 150ms ease-in-out;

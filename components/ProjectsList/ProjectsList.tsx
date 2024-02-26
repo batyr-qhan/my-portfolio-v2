@@ -15,13 +15,16 @@ export default function ProjectsList() {
           {projectsData.map((proj) => {
             return (
               <ProjectListItem
+                id={proj.id}
                 key={proj.id}
                 name={proj.name}
+                isEmbedded={proj.isEmbedded}
                 tags={proj.tags}
                 largeImage={proj.largeImage}
                 smallImage={proj.smallImage}
                 projectLink={proj.projectLink}
                 codeLink={proj.codeLink}
+                iFrameSrc={proj.iFrameSrc}
               />
             );
           })}
@@ -30,4 +33,3 @@ export default function ProjectsList() {
     </section>
   );
 }
-

@@ -1,30 +1,41 @@
+import { Project } from "@/data/projects";
+
 function ProjectListItem({
   name,
+  isEmbedded,
   tags,
   largeImage,
   smallImage,
   projectLink,
   codeLink,
-}: {
-  name: string;
-  tags: string[];
-  largeImage: string;
-  smallImage: string;
-  projectLink: string;
-  codeLink?: string;
-}) {
+  iFrameSrc,
+}: Project) {
   return (
     <div className="projects__item">
-      <picture className="projects__picture">
-        <source media="(min-width: 62.5em)" srcSet={largeImage} />
-        <img
-          className="projects__image"
-          src={smallImage}
-          alt="screenshot of design portfolio website"
-          width-="343"
-          height="253"
-        />
-      </picture>
+      {isEmbedded ? (
+        <div className="projects__picture">
+          <iframe
+            src={iFrameSrc}
+            style={{
+              width: "100%",
+              aspectRatio: 1.35,
+              border: "none",
+              pointerEvents: "none",
+            }}
+          ></iframe>
+        </div>
+      ) : (
+        <picture className="projects__picture">
+          <source media="(min-width: 62.5em)" srcSet={largeImage} />
+          <img
+            className="projects__image"
+            src={smallImage}
+            alt="screenshot of design portfolio website"
+            width-="343"
+            height="253"
+          />
+        </picture>
+      )}
       <h3 className="projects__name">{name}</h3>
       <p className="projects__tags">
         {tags.map((tag, idx) => (
