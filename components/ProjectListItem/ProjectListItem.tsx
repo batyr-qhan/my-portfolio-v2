@@ -1,4 +1,5 @@
 import { Project } from "@/data/projects";
+import Image from "next/image";
 
 function ProjectListItem({
   name,
@@ -12,8 +13,8 @@ function ProjectListItem({
 }: Project) {
   return (
     <div className="projects__item">
-      {isEmbedded ? (
-        <div className="projects__picture">
+      <picture className="projects__picture">
+        {isEmbedded ? (
           <iframe
             src={iFrameSrc}
             style={{
@@ -23,19 +24,20 @@ function ProjectListItem({
               pointerEvents: "none",
             }}
           ></iframe>
-        </div>
-      ) : (
-        <picture className="projects__picture">
-          <source media="(min-width: 62.5em)" srcSet={largeImage} />
-          <img
-            className="projects__image"
-            src={smallImage}
-            alt="screenshot of design portfolio website"
-            width-="343"
-            height="253"
-          />
-        </picture>
-      )}
+        ) : (
+          <>
+            <source media="(min-width: 62.5em)" srcSet={largeImage} />
+            <Image
+              className="projects__image"
+              src={smallImage ?? ""}
+              alt="screenshot of design portfolio website"
+              width={343}
+              height={253}
+              priority={true} // to fix the console warning in browser
+            />
+          </>
+        )}
+      </picture>
       <h3 className="projects__name">{name}</h3>
       <p className="projects__tags">
         {tags.map((tag, idx) => (
