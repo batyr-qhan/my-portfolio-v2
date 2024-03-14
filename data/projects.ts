@@ -12,6 +12,15 @@ export type Project = {
 
 export const projectsData: Project[] = [
   {
+    id: 298374,
+    name: "My Pomodoro Timer",
+    tags: ["react", "typescript", "css", "vite"],
+    isEmbedded: true,
+    projectLink: "https://batyr-qhan.github.io/my-pomodoro-app/",
+    codeLink: "https://github.com/batyr-qhan/my-pomodoro-app",
+    iFrameSrc: "https://batyr-qhan.github.io/my-pomodoro-app/",
+  },
+  {
     id: 0,
     name: "Blog Card Preview",
     tags: ["html", "css", "javascript"],
