@@ -2,6 +2,8 @@ import { projectsData } from "@/data/projects";
 import React from "react";
 import ProjectListItem from "../ProjectListItem/ProjectListItem";
 
+import "./styles/projects-list.css";
+
 export default function ProjectsList() {
   return (
     <section className="projects">

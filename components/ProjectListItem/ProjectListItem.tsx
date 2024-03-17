@@ -1,6 +1,8 @@
 import { Project } from "@/data/projects";
 import Image from "next/image";
 
+import "./styles/project-list-item.css";
+
 function ProjectListItem({
   name,
   isEmbedded,
@@ -15,33 +17,27 @@ function ProjectListItem({
     <div className="projects__item">
       <picture className="projects__picture">
         {isEmbedded ? (
-          <iframe
-            src={iFrameSrc}
-            style={{
-              width: "100%",
-              aspectRatio: 1.35,
-              border: "none",
-              pointerEvents: "none",
-            }}
-          ></iframe>
+          <iframe src={iFrameSrc} className="projects__iframe"></iframe>
         ) : (
           <>
             <source media="(min-width: 62.5em)" srcSet={largeImage} />
-            <Image
-              className="projects__image"
-              src={smallImage ?? ""}
-              alt="screenshot of design portfolio website"
-              width={343}
-              height={253}
-              priority={true} // to fix the console warning in browser
-            />
+            {smallImage && (
+              <Image
+                className="projects__image"
+                src={smallImage ?? ""}
+                alt="screenshot of design portfolio website"
+                width={343}
+                height={253}
+                priority={true}
+              />
+            )}
           </>
         )}
       </picture>
       <h3 className="projects__name">{name}</h3>
       <p className="projects__tags">
-        {tags.map((tag, idx) => (
-          <span key={idx}>{tag}</span>
+        {tags.map((tag) => (
+          <span key={tag}>{tag}</span>
         ))}
       </p>
       <div className="projects__links">
