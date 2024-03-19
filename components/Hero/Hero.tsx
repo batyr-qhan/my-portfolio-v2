@@ -35,7 +35,7 @@ export default function HeroSection() {
               Nice to meet you! I`m <span>Batyr Khan</span>.
             </h1>
             <p className="hero__description">
-              I`m a front-end developer developer who enjoys building web and
+              I`m a front-end developer who enjoys building web and
               mobile apps that users love.
             </p>
             <div className="hero__actions-item">
