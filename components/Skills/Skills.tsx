@@ -24,11 +24,11 @@ export default function Skills() {
         </div>
         <div className="skills__item">
           <h3 className="skills__title">React Native</h3>
-          <p className="skills__description">2+ Year Experience</p>
+          <p className="skills__description">1+ Year Experience</p>
         </div>
         <div className="skills__item">
-          <h3 className="skills__title">Sass</h3>
-          <p className="skills__description">4+ Years Experience</p>
+          <h3 className="skills__title">Tailwind</h3>
+          <p className="skills__description">2+ Years Experience</p>
         </div>
       </div>
       <PatternRings className="skills__rings" />
