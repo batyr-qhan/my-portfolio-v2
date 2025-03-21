@@ -43,7 +43,7 @@ export default function HeroSection() {
                 Contact me
               </Link>
             </div>
-            {/* <div className="hero__actions-item">
+            <div className="hero__actions-item">
               <Link
                 href="#"
                 className="hero__contact underline"
@@ -52,7 +52,7 @@ export default function HeroSection() {
               >
                 My Resume
               </Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

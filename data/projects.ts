@@ -12,6 +12,22 @@ export type Project = {
 
 export const projectsData: Project[] = [
   {
+    id: 1,
+    name: "Lumex Agency",
+    tags: ["next.js", "framer motion", "animations", "tailwind css"],
+    isEmbedded: true,
+    projectLink: "https://lumexagency.com/",
+    iFrameSrc: "https://lumexagency.com/",
+  },
+  {
+    id: 6,
+    name: "Nova Pixels Design",
+    tags: ["next.js", "scss", "framer motion"],
+    projectLink: "https://novapixelsdesign.com/",
+    isEmbedded: true,
+    iFrameSrc: "https://novapixelsdesign.com/",
+  },
+  {
     id: 298374,
     name: "My Pomodoro Timer",
     tags: ["react", "typescript", "css", "vite"],
