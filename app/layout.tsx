@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "batyrkhan portfolio",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster richColors />
       </body>
     </html>
   );

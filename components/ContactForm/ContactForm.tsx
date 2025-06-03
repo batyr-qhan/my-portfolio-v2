@@ -1,7 +1,10 @@
+"use client";
+
 import { sendContactForm } from "@/lib/api";
 import IconInvalid from "@/public/IconInvalid";
 import PatternRings from "@/public/PatternRings";
 import React, { ChangeEvent, useState } from "react";
+import { toast } from "sonner";
 
 const initValues = {
   name: "",
@@ -12,17 +15,7 @@ const initValues = {
 
 const initState = { isLoading: false, error: "", values: initValues };
 
-export default function ContactForm({
-  setIsToastShown,
-}: {
-  setIsToastShown: React.Dispatch<
-    React.SetStateAction<{
-      status: boolean;
-      type: string;
-      text: string;
-    }>
-  >;
-}) {
+export default function ContactForm() {
   const [formState, setFormState] = useState(initState);
 
   const {
@@ -47,49 +40,31 @@ export default function ContactForm({
       ...prev,
       isLoading: true,
     }));
-    
+
     try {
       await sendContactForm({
         ...formState.values,
         subject: "From My Website",
       });
       setFormState(initState);
-      showToast({ type: "success", text: "Successfully Sent" });
-      // showToast();
-      // toast({
-      //   title: "Message sent.",
-      //   status: "success",
-      //   duration: 2000,
-      //   position: "top",
-      // });
+      toast.success(
+        "Message sent successfully! I will get back to you as soon as possible.",
+        {
+          duration: 3000,
+          position: "top-right",
+        }
+      );
     } catch (error: any) {
       setFormState((prev) => ({
         ...prev,
         isLoading: false,
         error: error.message,
       }));
-      showToast({ type: "warning", text: formState.error });
+      toast.error(`Error: ${formState.error}`, {
+        duration: 3000,
+        position: "top-right",
+      });
     }
-  };
-
-  const showToast = ({ type, text }: { type: string; text: string }) => {
-    setIsToastShown((prev) => ({
-      ...prev,
-      status: true,
-      type,
-      text,
-    }));
-
-    // automatically hide the toast after 5 seconds
-    // your can set a shorter/longer time if you want
-    setTimeout(() => {
-      setIsToastShown((prev) => ({
-        ...prev,
-        status: false,
-        text: "",
-        type: "",
-      }));
-    }, 3000);
   };
 
   return (

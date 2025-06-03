@@ -1,3 +1,5 @@
+"use client";
+
 import { projectsData } from "@/data/projects";
 import React from "react";
 import ProjectListItem from "../ProjectListItem/ProjectListItem";

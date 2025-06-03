@@ -1,3 +1,5 @@
+"use client";
+
 import PatternCircle from "@/public/PatternCircle";
 import PatternRings from "@/public/PatternRings";
 import Link from "next/link";
