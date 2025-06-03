@@ -510,6 +510,15 @@ h1 > span {
   margin-block-end: 16px;
 }
 
+.contact__control button:hover {
+  color: var(--accent);
+}
+
+.contact__control button {
+  transition: color var(--transition);
+}
+
+
 .contact__control input,
 .contact__control textarea {
   width: 100%;
