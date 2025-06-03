@@ -6,11 +6,22 @@ import "./styles/projects-list.css";
 
 export default function ProjectsList() {
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="wrapper projects__wrapper">
         <div className="projects__grid">
           <h2 className="projects__headline header-xl">Projects</h2>
-          <a href="#contact" className="projects__contact underline">
+          <a
+            href="#contact"
+            className="projects__contact underline"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById("contact");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Contact me
           </a>
 

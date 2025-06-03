@@ -47,6 +47,7 @@ export default function ContactForm({
       ...prev,
       isLoading: true,
     }));
+    
     try {
       await sendContactForm({
         ...formState.values,

@@ -32,25 +32,42 @@ export default function HeroSection() {
 
           <div className="hero__text">
             <h1 className="hero__headline header-xl">
-              Nice to meet you! I`m <span>Batyr Khan</span>.
+              Nice to meet you! I`m <span>Han</span>.
             </h1>
             <p className="hero__description">
-              I`m a front-end developer who enjoys building web and
-              mobile apps that users love.
+              I`m a front-end developer who enjoys building web and mobile apps
+              that users love.
             </p>
             <div className="hero__actions-item">
-              <Link href="#contact" className="hero__contact underline">
+              <Link
+                href="#contact"
+                className="hero__contact underline"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.getElementById("contact");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
                 Contact me
               </Link>
             </div>
             <div className="hero__actions-item">
               <Link
-                href="#"
+                href="#projects"
                 className="hero__contact underline"
-                target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.getElementById("projects");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
-                My Resume
+                My projects
               </Link>
             </div>
           </div>
